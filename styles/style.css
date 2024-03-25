@@ -1,0 +1,89 @@
+
+    main{
+        margin-top:60px;
+        }
+        main section:nth-child(even){
+            background-color: #f7f7f7;
+            }
+            header{
+                position: fixed;
+                top:0;
+                left:0;
+                right:0;
+                height:60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+                z-index: 4;
+                max-width: 100%;
+                }
+                .main-menu li{
+                display:inline;
+                margin-left: 20px;
+                }
+                .main-menu li a{
+                text-decoration: none;
+                color:black;
+                }
+                .main-menu li:hover a{
+                text-decoration: underline;
+                }
+                .hamburger{
+                display: none;
+                }        
+@media screen and (max-width: 900px) {
+    .main-menu{
+    display: none;
+    }
+    .hamburger {
+    display: inline-block;
+    background-image: url(/img/fa-bars.png);
+    width: 30px;
+    height: 30px;
+    }
+    .main-header{
+    position:relative;
+    top:0px;
+    }
+    .main-menu{
+    display: none;
+    }
+    .main-header{
+    position:relative;
+    top:0px;
+    }
+    .main-menu.responsive {
+    display: block;
+    position: absolute;
+    background-color: #340060;
+    width:100%;
+    top:60px;
+    left:0px;
+    padding-top:20px;
+    padding-bottom:20px;
+    }
+    .main-menu.responsive li{
+    display: block;
+    margin-left:0px;
+    }
+}
+
+
+.Hlavna_str .section {
+    box-sizing: border-box;
+  
+    width: 100%;
+    align-items: center;
+    padding: 20rem 52rem 10rem 53rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5500000119);
+    background-size: 100% 186%;
+    background-position: 0 ;
+    background-image: url('../img/section-bg-TSc.png');
+    flex-shrink: 0;
+    background-attachment: fixed;
+  }
+
+  
