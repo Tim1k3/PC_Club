@@ -9,7 +9,7 @@ include('dbconnection.php');
         public function login($useremail, $password){
             try{
                 $data = array('user_email' => $useremail, 'user_password' => $password);
-                $sql = 'SELECT * FROM user WHERE email = :user_email AND password = :user_password';
+                $sql = 'SELECT * FROM user WHERE meno = :user_email AND password = :user_password';
                 $query_run = $this->db->prepare($sql);
                 $query_run->execute($data);
                 $n_rows = $query_run->rowCount();

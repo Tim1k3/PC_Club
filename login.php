@@ -12,7 +12,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
           <div class="col-100 text-center">
                 <h1>Prihlásenie</h1>
                 <form action="" method="POST">
-                    <input type="email" name="email" placeholder="Vaše meno">
+                    <input type="text" name="name" placeholder="Vaše meno">
                     <br>
                     <input type="text" name="password" placeholder="Vaše heslo">
                     <br>
@@ -20,14 +20,14 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
                 </form>
                <?php
                   if(isset($_POST['user_login'])){
-                    $email = $_POST['email'];
+                    $name = $_POST['name'];
                     $password = $_POST['password'];
 
                     $user_object = new User();
 
-                    $login_success = $user_object->login($email, $password);
+                    $login_success = $user_object->login($name, $password);
                     if($login_success){
-                      header('Location: admin.php');
+                      // header('Location: admin.php');
                       die();
                     }
                     else{

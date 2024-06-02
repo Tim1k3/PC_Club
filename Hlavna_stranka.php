@@ -1,4 +1,5 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+include 'classes/Home.php';?>
 
 <!-- Main Content -->
 <div class="container section mt-5 mb-5">
@@ -16,7 +17,7 @@
   <div class="text-center mb-5">
     <h2 class="price-list">PRICE LIST</h2>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-6">
       <div class="card mb-4">
         <div class="card-body">
@@ -34,8 +35,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-6">
+    </div> -->
+    <!-- <div class="col-md-6">
       <div class="card mb-4">
         <div class="card-body">
           <h3 class="card-title bootcamp">BootCamp</h3>
@@ -54,7 +55,11 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+<?php
+$home_object=new Home();
+$home_object->room();
+?>
 
 <!-- Contact Information Section -->
 <div class="container section mb-5 p-5">
