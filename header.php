@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -45,9 +48,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="Kontakt.php">Kontakt</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
-                </li>
+                </li> -->
+                <?php
+                if (!isset($_SESSION["logged_in"])){
+                    echo '<li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>';
+                
+                }
+                else 
+                echo '<li class="nav-item">
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </li>';
+                ?>
             </ul>
         </div>
     </div>

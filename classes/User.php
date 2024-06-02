@@ -1,4 +1,5 @@
 <?php
+// session_start();
 include('dbconnection.php');
     class User extends Database{
         private $db;
@@ -8,7 +9,7 @@ include('dbconnection.php');
         }
         public function login($useremail, $password){
             try{
-                $data = array('user_email' => $useremail, 'user_password' => $password);
+                $data = array('user_email' => $useremail, 'user_password' => md5($password));
                 $sql = 'SELECT * FROM user WHERE meno = :user_email AND password = :user_password';
                 $query_run = $this->db->prepare($sql);
                 $query_run->execute($data);
@@ -30,7 +31,7 @@ include('dbconnection.php');
             try{
                 $hashed_password = $password;
                 $data = array('user_email' => $useremail, 'user_password' => md5($hashed_password), 'user_role'=>'0');
-                $sql = "INSERT INTO user (email, password, role) VALUES (:user_email, :user_password, :user_role)";
+                $sql = "INSERT INTO user (meno, password, role) VALUES (:user_email, :user_password, :user_role)";
                 $query_run = $this->db->prepare($sql);
                 $query_run->execute($data);
                 return true;

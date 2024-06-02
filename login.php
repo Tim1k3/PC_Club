@@ -1,6 +1,6 @@
 <?php
-include('classes/User.php');
-include('header.php');
+include_once('classes/User.php');
+include_once('header.php');
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
   header('Location: admin.php');
 }
@@ -11,6 +11,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
         <div class="row">
           <div class="col-100 text-center">
                 <h1>Prihlásenie</h1>
+                <a href="register.php">regestracia</a>
                 <form action="" method="POST">
                     <input type="text" name="name" placeholder="Vaše meno">
                     <br>
@@ -27,7 +28,7 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
 
                     $login_success = $user_object->login($name, $password);
                     if($login_success){
-                      // header('Location: admin.php');
+                      header('Location: admin.php');
                       die();
                     }
                     else{

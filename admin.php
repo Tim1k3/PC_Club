@@ -3,6 +3,7 @@ include('header.php');
 if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true){
   header('Location: 404.php');
 }
+
 ?> 
 <main>
       
@@ -10,6 +11,12 @@ if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != true){
         <div class="row">
           <div class="col-100 text-center">
               <h1>Admin rozhranie</h1>
+              <?php
+              if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] != 0){
+                include('admin_price.php');
+              }
+              
+              ?>
                
           </div>
         </div>
