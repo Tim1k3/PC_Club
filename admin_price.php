@@ -31,8 +31,8 @@
                           </form>
                         </td>';
                   echo '<td>
-                      <form action="kontakt-update.php" method="POST">
-                        <button type="submit" name="edit_contact" value="'.$c->id.'"'.'>Editovat</button>
+                      <form action="price-update.php" method="POST">
+                        <button type="submit" name="edit" value="'.$c->id.'"'.'>Editovat</button>
                         </form>
                     </td>';
                 }

@@ -52,5 +52,29 @@ public function delete(){
         echo $e->getMessage();
     }
 }
+public function select_single($price_id){
+  try{
+      $data = array('price_id'=>$price_id);
+      $query= "SELECT * FROM price WHERE id = :price_id";
+      $query_run = $this->db->prepare($query);
+      $query_run->execute($data);
+      $contact_data = $query_run->fetch();
+      return $contact_data;
+  }
+  catch(PDOException $e){
+      echo $e->getMessage();
+  }
+}
+public function edit($price_id, $new_data){
+  try{
+      $data=array('price_id'=>$price_id, 'room'=>$new_data['room'], 'characteristics'=>$new_data['characteristics'], 'time1' => $new_data['time1'], 'time2' => $new_data['time2']);
+      $query="UPDATE price SET room = :room, characteristics = :characteristics, time1 = :time1, time2 = :time2 WHERE id = :price_id";
+      $query_run = $this->db->prepare($query);
+      $query_run->execute($data);
+  }
+  catch(PDOException $e){
+      echo $e->getMessage();
+  }
+}
 }
 ?>
