@@ -8,9 +8,11 @@ class Contact extends Database {
     }
     function saveContactData($name, $email, $message, $consent) {
         
+        $data = array($name, $email, $message, $consent);
         $stmt = $this->db->prepare("INSERT INTO contactus (name, email, message, checkbox) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $name, $email, $message, $consent);
-        $stmt->execute();
-        $stmt->close();
+        
+        $stmt->execute($data);
+        
     }
 }
+?>

@@ -18,21 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contact_object=new Contact();
     $contact_object->saveContactData($name, $email, $message, $consent);
 header("Location: Thankyou.php");
-    // Show SweetAlert and redirect using JavaScript
-    // echo "<script>
-    //     document.addEventListener('DOMContentLoaded', function() {
-    //         Swal.fire({
-    //             title: 'Thank you for contacting us!',
-    //             text: 'We have received your message.',
-    //             icon: 'success',
-    //             confirmButtonText: 'OK'
-    //         }).then((result) => {
-    //             if (result.isConfirmed) {
-    //                 window.location.href = 'Thankyou.php';
-    //             }
-    //         });
-    //     });
-    // </script>";
+    
 }
 ?>
 
@@ -91,7 +77,6 @@ header("Location: Thankyou.php");
   }
 </style>
 
-<!-- Include SweetAlert2
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+
 
 <?php include 'footer.php'; ?>

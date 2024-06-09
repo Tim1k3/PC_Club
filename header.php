@@ -20,7 +20,7 @@ session_start();
 
     <style>
         .carousel-item {
-        height: 400px; /* Adjust the height as per your preference */
+        height: 400px; 
     }
     
     .carousel-item img {

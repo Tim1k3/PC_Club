@@ -32,6 +32,7 @@ include('dbconnection.php');
                 $hashed_password = $password;
                 $data = array('user_email' => $useremail, 'user_password' => md5($hashed_password), 'user_role'=>'0');
                 $sql = "INSERT INTO user (meno, password, role) VALUES (:user_email, :user_password, :user_role)";
+                echo $data['user_password'];
                 $query_run = $this->db->prepare($sql);
                 $query_run->execute($data);
                 return true;

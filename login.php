@@ -10,8 +10,8 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
       <section class="container">
         <div class="row">
           <div class="col-100 text-center">
-                <h1>Prihlásenie</h1>
-                <a href="register.php">regestracia</a>
+                <h1>Prihlásenie /
+                <a href="register.php">regestracia</a></h1>
                 <form action="" method="POST">
                     <input type="text" name="name" placeholder="Vaše meno">
                     <br>
